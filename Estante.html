@@ -194,7 +194,28 @@
         }
 
          /* Rodapé */
-         .footer {
+         .links-rodape {
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    margin-top: 10em;
+}
+.links-rodape a {
+    text-decoration: none;
+    color: #00528d;
+padding: 0.5em;
+}
+.rodape {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2em;
+}
+.copy {
+    text-align: center;
+    margin-top: 3em;
+}.footer {
             text-align: center;
             padding: 20px;
             background-color: #f0f0f0;
@@ -303,6 +324,27 @@
         <p>&copy; 2024 Lerivia. Todos os direitos reservados.</p>
     </div>
 
+    <footer>
+        <div class="rodape"> 
+            <div class="logo">
+                <a href="index.html"><img src="img/logo-lerevia.jpeg" alt="Logo do Projeto"></a>
+        </div>
+        <div class="links-rodape">
+            <a href="técnicas.html">Técnicas de estudo</a>
+            <a href="dicas.html">Dicas gerais</a>
+            <a href="técnicas de estudo/pomodoro.html">Pomodoro</a>
+        </div>
+        <div class="links-rodape">
+            <a href="livros/design/estanteDesign.html">Estante Design</a>
+            <a href="livros/dev/estanteDev.html">Estante Dev</a>
+        </div>
+        <div class="links-rodape">
+            <a href="Estante.html">Sua estante</a>
+            <a id="perfil-button" onclick="GerenciarRotaLogin()" >Perfil</a>
+        </div>
+    </div>
+    
+    </footer>
     <script>
         function openTab(tabId) {
             // Esconder todas as abas
