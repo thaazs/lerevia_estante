@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ler Via - Livros de Design e Desenvolvimento</title>
+
+    <!-- Importação das fontes -->
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1ede7;
+            color: #293d5d
+;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: ##f1ede7;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        /* Logo */
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+
+        
+        .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu > li > a {
+    text-decoration: none;
+    color: #293d5d;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+}
+
+/* Submenu */
+.submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f1ede7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    display: none; /* Esconde o submenu por padrão */
+    z-index: 10;
+}
+
+.submenu li {
+    padding: 5px 20px;
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: #293d5d;
+    display: block;
+    font-size: 14px;
+}
+
+.submenu li a:hover {
+    color: #0056b3;
+}
+
+/* Exibe o submenu ao passar o mouse */
+.menu > li:hover > .submenu {
+    display: block;
+}
+         
+        .banner-estante {
+            display: flex;
+            margin: 5em;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+                } 
+
+        .banner-estante img {
+            border-radius: 5px;
+        }
+
+        .info-estantes {
+            width: 50%;
+        }
+        
+
+
+        .info-estantes a {
+            display: inline-block;
+            text-decoration: none; /* Remove as decorações */
+            background-color: #00528d;
+            color: #ffffff; /* Texto branco */
+            padding: 10px 15px;
+            border-radius: 50px; /* Cantos arredondados */
+            margin-top: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            }
+
+                .info-estantes a:hover {
+                    background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+                }
+        
+        
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 32px;
+            }
+
+            .section-destaque h2 {
+                font-size: 28px;
+            }
+
+            .book-card {
+                padding: 15px;
+            }
+
+             /*Rodapé*/
+        footer {
+            background-color: #f1ede7;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho-->
+    <header>
+        <!--Logo-->
+        <img src="img/logo-lerevia.jpeg" alt="Logo Lerivia" class="logo">
+
+        <!-- Navegação-->
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="técnicas.html">Técnicas de Estudo ﹀</a>
+                    <ul class="submenu">
+                        <li><a href="dicas.html">Dicas Gerais</a></li>
+                        <li><a href="técnicas de estudo/pomodoro.html">Pomodoro</a></li>
+                        <li><a href="técnicas de estudo/tecnica2.html">Técnica 2</a></li>
+                        <li><a href="técnicas de estudo/tecnica3.html">Técnica 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="livros.html">Livros ﹀</a>
+                    <ul class="submenu">
+                        <li><a href="livros/dev/estanteDev.html">DEV</a></li>
+                        <li><a href="livros/design/estanteDesign.html">Design</a></li>
+                    </ul>
+                </li>
+                <li><a href="Estante.html">Sua Estante</a></li>
+                <li><a id="perfil-button" onclick="GerenciarRotaLogin()" >Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <main>
+
+    <div class="banner-estante">
+        
+            <img class="img-dev" src="https://img.freepik.com/vetores-gratis/laptop-com-icone-de-codigo-isometrico-de-programa-desenvolvimento-de-software-e-aplicacoes-de-programacao-neon-escuro_39422-971.jpg?semt=ais_hybrid">
+        
+
+        <div class="info-estantes">
+            <h1>Estante DEV</h1>
+            <p>Descubra o desenvolvimento: a construção e estruturação de sistemas e aplicações 
+                através de linguagens como JavaScript, Python, Ruby e frameworks como React e Django. 
+                Inclui a criação de back-end, integração de banco de dados, e otimização de performance 
+                para entregar soluções ágeis e escaláveis.</p>
+            <a href="livros/dev/estanteDev.html">Acessar</a>
+        </div>
+
+    </div>
+
+    
+    <div class="banner-estante">
+        <div class="info-estantes">
+            <h1>Estante Design</h1>
+            <p>Explore o design : combinações criativas de estética e funcionalidade, 
+                abordagens inovadoras de design gráfico, tipografia e cores para criar 
+                experiências visuais impactantes e intuitivas.</p>
+                <a href="livros/design/estanteDesign.html">Acessar</a>
+        </div>
+        
+            <img src="https://img.freepik.com/fotos-gratis/grupo-de-diversos-designers-tendo-uma-discussao_53876-14556.jpg">
+        
+    </div>
+
+   </main>
+
+    <footer>
+        <p>&copy; 2024 Lervia. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

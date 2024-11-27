@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lervia - Técnica Pomodoro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f3f4f6;
+        }
+
+        /* Header */
+        header {
+            background-color: #f5f5f5;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ddd;
+        }
+
+        header .logo {
+            width: 150px;
+            height: auto;
+        }
+
+        
+        .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu > li > a {
+    text-decoration: none;
+    color: #293d5d;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+}
+
+/* Submenu */
+.submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f1ede7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    display: none; /* Esconde o submenu por padrão */
+    z-index: 10;
+}
+
+.submenu li {
+    padding: 5px 20px;
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: #293d5d;
+    display: block;
+    font-size: 14px;
+}
+
+.submenu li a:hover {
+    color: #0056b3;
+}
+
+/* Exibe o submenu ao passar o mouse */
+.menu > li:hover > .submenu {
+    display: block;
+}
+
+        /* Hero section */
+        .hero {
+            background-color: #1a335b;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 200px;
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+         /* Banner */
+         .banner {
+            position: relative;
+            width: 100%;
+            height: 75vh;
+            background-image: url("../img/tecnica\ pomodoro.jpg");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: right;
+        }
+        
+
+        .banner h1 {
+            font-size: 48px;
+            font-weight: bold; text-align: left;
+        }
+
+        .banner p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .enfeite {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-image: url("../img/enfeite.png");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: right;
+        }
+
+        /* Features section */
+        .features {
+            
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+            background-color: #f1ede7;
+            color: #fff;
+            padding: 40px 20px;
+        }
+
+        .feature-box {
+            position: relative;
+            margin-top: -100px;
+            padding: 2em;
+            text-align: center;
+            background-color: #1a335b;
+            width: 25%;
+        }
+
+        .feature-box img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+
+        .feature-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            font-size: 1em;
+        }
+
+        /* Content section */
+        .content-section {
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: justify;
+            background-color: #f1ede7;
+        }
+
+        .content-section h2 {
+            margin-left: 200px;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            margin-left: 200px;
+            font-size: 1.2em;
+            max-width: 800px;
+            width: 70%;
+        }
+
+        .content-section img {
+            margin-right: 10em;
+            width: 500px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        /* Motivation and management section */
+        .motivation-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #1a335b;
+            color: #fff;
+        }
+
+        .motivation-box {
+            width: 45%;
+            background-color: #fff;
+            color: #293d5d;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .motivation-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .motivation-box p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        /* Rodapé*/
+        footer {
+            background-color: #888;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+     <!-- Cabeçalho-->
+     <header>
+        <!--Logo-->
+        <a href="../index.html">
+        <img src="../img/logo-lerevia.jpeg" alt="Logo Lerivia" class="logo"></a>
+
+        <!-- Navegação-->
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="../técnicas.html">Técnicas de Estudo ﹀</a>
+                    <ul class="submenu">
+                        <li><a href="../dicas.html">Dicas Gerais</a></li>
+                        <li><a href="pomodoro.html">Pomodoro</a></li>
+                        <li><a href="tecnica2.html">Técnica 2</a></li>
+                        <li><a href="tecnica3.html">Técnica 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../livros.html">Livros ﹀</a>
+                    <ul class="submenu">
+                        <li><a href="../livros/dev/estanteDev.html">Dev</a></li>
+                        <li><a href="../livros/design/estanteDesign.html">Design</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Estante.html">Sua Estante</a></li>
+                <li><a href="..//login.html">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <!-- Banner Principal -->
+   <div class="banner">
+    <div>
+        <h1>Pomodoro</h1>
+        <p>Transforme sua rotina de estudos com a técnica pomodoro:
+            sessões intensas de foco e intervalos estratégicos para a máxima eficácia e produtividade!!</p>
+    </div>
+</div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-box">
+            <img src="../img/Ampulheta.png" alt="Ícone Tempo">
+            <h3>Tempo</h3>
+            <p>Use ciclos de 25 minutos de trabalho ininterrupto para gerenciar seu tempo de forma eficiente.</p>
+        </div>
+        <div class="feature-box">
+            <img src="../img/alvo.png" alt="Ícone Foco">
+            <h3>Foco</h3>
+            <p>Mantenha a concentração total em uma única tarefa durante cada ciclo. Elimine distrações e direcione sua atenção para objetivos específicos.</p>
+        </div>
+        <div class="feature-box">
+            <img src="../img/conteudo.png" alt="Ícone Conteúdo">
+            <h3>Conteúdo</h3>
+            <p>Utilize as pausas de 5 minutos entre os ciclos para revisar rapidamente o que foi aprendido.</p>
+        </div>
+    </section>
+
+    <div class="enfeite">
+
+    </div>
+
+    <!-- Ciclos e Descanso -->
+    <section class="content-section">
+        <div>
+        <h2>Ciclos e Descanso</h2>
+        <p>
+            O ciclo de Pomodoros pode ser repetido várias vezes ao longo do dia, intercalando períodos de trabalho intenso com pausas. Após quatro pomodoros, é recomendada uma pausa mais longa de 15 a 30 minutos. Esse tempo extra pode ser utilizado para atividades relaxantes, como ler um livro ou dar uma caminhada.
+        </p>
+    </div>
+        <img src="../img/dormindo.avif" alt="Relógio">
+    </section>
+
+    <!-- Motivation and Management -->
+    <section class="motivation-section">
+        <div class="motivation-box">
+            <h3>Motivação</h3>
+            <p>A técnica Pomodoro promove uma sensação de realização após cada ciclo de trabalho completado, aumentando a motivação intrínseca para alcançar metas de estudo e desenvolvimento.</p>
+        </div>
+        <div class="motivation-box">
+            <h3>Gerenciamento</h3>
+            <p>Estabelecendo períodos definidos de trabalho e pausa, a técnica ajuda a gerenciar e minimizar interrupções e distrações, mantendo um fluxo de trabalho eficiente e produtivo.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lervia. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

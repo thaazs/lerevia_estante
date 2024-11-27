@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LerVia - Estante</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f1ede7;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #f1ede7;
+        }
+
+        header h1 {
+            font-size: 30px;
+            letter-spacing: 5px;
+        }
+
+         /* Logo */
+         .logo {
+            width: 150px;
+            height: auto;
+        }
+
+        
+        .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu > li > a {
+    text-decoration: none;
+    color: #293d5d;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+}
+
+/* Submenu */
+.submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f1ede7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    display: none; /* Esconde o submenu por padrão */
+    z-index: 10;
+}
+
+.submenu li {
+    padding: 5px 20px;
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: #293d5d;
+    display: block;
+    font-size: 14px;
+}
+
+.submenu li a:hover {
+    color: #0056b3;
+}
+
+/* Exibe o submenu ao passar o mouse */
+.menu > li:hover > .submenu {
+    display: block;
+}
+
+        #profile-section {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+        }
+
+        #profile-section img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+
+        #profile-section div {
+            margin-left: 20px;
+        }
+
+        #profile-section h3 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        #profile-section p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        #edit-profile {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #E0E0E0;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #book-goal-section {
+            padding: 0 40px;
+        }
+
+        .goal-carousel {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+        }
+
+        .goal-carousel img {
+            width: 150px;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .book-list {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+        }
+
+        .book-list .category {
+            text-align: center;
+            flex-basis: 30%;
+        }
+
+        .category img {
+            width: 150px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .category h3 {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #0056b3;
+        }
+
+        .category h4 {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+          /* Estilos das abas */
+          .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #FFF;
+            border: 1px solid #DDD;
+            margin-top: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content img {
+            width: 100px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .tab-content h4 {
+            font-size: 18px;
+        }
+
+         /* Rodapé */
+         .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #888;
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <!-- Cabeçalho-->
+    <header>
+        <!--Logo-->
+        <a href="index.html"><img src="img/logo-lerevia.jpeg" alt="Logo Lerivia" class="logo"></a>
+
+        <!-- Navegação-->
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="técnicas.html">Técnicas de Estudo ﹀</a>
+                    <ul class="submenu">
+                        <li><a href="dicas.html">Dicas Gerais</a></li>
+                        <li><a href="técnicas de estudo/pomodoro.html">Pomodoro</a></li>
+                        <li><a href="técnicas de estudo/tecnica2.html">Técnica 2</a></li>
+                        <li><a href="técnicas de estudo/tecnica3.html">Técnica 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="livros.html">Livros ﹀</a>
+                    <ul class="submenu">
+                        <li><a href="livros/dev/estanteDev.html">DEV</a></li>
+                        <li><a href="livros/design/estanteDesign.html">Design</a></li>
+                    </ul>
+                </li>
+                <li><a href="Estante.html">Sua Estante</a></li>
+                <li><a id="perfil-button" onclick="GerenciarRotaLogin()" >Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="profile-section">
+        <img src="img/usuário ícone.png" alt="Foto de perfil">
+        <div>
+            <h3>Nome do Usuário</h3>
+            <p>@usuario</p>
+            <a href="/perfil.html"> Editar Perfil</a>
+        </div>
+    </section>
+
+    <section id="book-goal-section">
+        <h2>Meta de Leitura</h2>
+        <div class="goal-carousel">
+            <img src="img/Algoritmos.jpg" alt="Livro 1">
+            <img src="img/Big Data.jpg" alt="Livro 2">
+            <img src="img/Código Limpo.webp" alt="Livro 3">
+        </div>
+    </section>
+
+    <section class="book-list">
+        <div class="category" onclick="openTab('tab-lendo')">
+            <h3>Lendo</h3>
+            <img src="img/Desing Digital.jpg" alt="Design Digital">
+            <h4>Design Digital</h4>
+        </div>
+        <div class="category" onclick="openTab('tab-lidos')">
+            <h3>Lidos</h3>
+            <img src="img/Estrutura de Dados e Algoritmos com JavaScript.jpeg" alt="Estrutura de Dados">
+            <h4>Estrutura de Dados</h4>
+        </div>
+        <div class="category" onclick="openTab('tab-favoritos')">
+            <h3>Favoritos</h3>
+            <img src="img/GuiaFront-End.webp" alt="GuiaFront-End">
+            <h4>GuiaFront-End</h4>
+        </div>
+    </section>
+
+     <!-- Conteúdo das abas -->
+     <div id="tab-lendo" class="tab-content">
+        <h4>Livros que você está lendo:</h4>
+        <div>
+            <img src="img/Desing Digital.jpg" alt="Desing Digital">
+            <span>Desing Digital - Fabiana Guerra e Mirela Terce</span>
+        </div>
+    </div>
+
+    <div id="tab-lidos" class="tab-content">
+        <h4>Livros que você já leu:</h4>
+        <div>
+            <img src="img/Estrutura de Dados e Algoritmos com JavaScript.jpeg" alt="Estrutura de Dados">
+            <span>Estrutura de Dados - Loaine Groner</span>
+        </div>
+    </div>
+
+    <div id="tab-favoritos" class="tab-content">
+        <h4>Seus livros favoritos:</h4>
+        <div>
+            <img src="img/GuiaFront-End.webp" alt="GuiaFront-End">
+            <span>GuiaFront-End - Franz Kafka</span>
+        </div>
+    </div>
+
+   
+    <!-- Rodapé -->
+    <div class="footer">
+        <p>&copy; 2024 Lerivia. Todos os direitos reservados.</p>
+    </div>
+
+    <script>
+        function openTab(tabId) {
+            // Esconder todas as abas
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            // Mostrar a aba clicada
+            var selectedTab = document.getElementById(tabId);
+            selectedTab.classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/styles/login_styles.css">
+    <title>Lerévia</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="signin-signup">
+            <form action="/perfil.html" class="sign-in-form">
+                <h2 class="title">Entrar</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="E-mail" id="email-login">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Senha" id="senha-login">
+                </div>
+                <input type="submit" value="Entrar" class="btn" id="login-button">
+               
+                <!-- <p class="account-text">Já tem uma conta? <a href="#" id="sign-up-btn2">Criar</a></p> -->
+            </form>
+            <form action="/perfil.html" class="sign-up-form">
+                <h2 class="title">Criar</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Nome" id="nome-criar-conta">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="E-mail" id="email-criar-conta">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Senha" id="senha-criar-conta">
+                </div>
+                <input type="submit" value="Criar" class="btn" id="criar-conta-button">
+               
+                <p class="account-text">Já tem uma conta? <a href="#" id="sign-in-btn2">Entrar</a></p>
+            </form>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Bem-Vindo de volta!</h3>
+                    <p> Já tem uma conta? Estamos prontos para continuar sua jornada de aprendizado!</p>
+                    <button class="btn" id="sign-in-btn">Entrar</button>
+                </div>
+                <img src="/img/signin.svg" alt="" class="image">
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Estude com Lerévia!</h3>
+                    <p>Não tem uma conta? Crie já! Lerévia é seu portal de estudos com dicas e livros para acelerar seu aprendizado. Aprenda, pratique e evolua!"</p>
+                    <button class="btn" id="sign-up-btn">Criar</button>
+                </div>
+                <img src="/img/signup.svg" alt="" class="image">
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/user_control.js" defer></script>
+    <script src="/js/app.js" defer></script>
+</body>
+
+</html>
