@@ -1,16 +1,39 @@
+<style>
+    .book-container {
+        display: flex; /* Define um layout flexível */
+        flex-wrap: wrap; /* Permite que os itens quebrem de linha se necessário */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        gap: 16px; /* Adiciona espaço entre os itens */
+        margin-top: 16px; /* Espaçamento superior opcional */
+    }
+
+    .book-container div {
+        text-align: center; /* Centraliza o texto e a imagem dentro de cada item */
+        width: 200px; /* Define uma largura consistente para cada "livro" */
+    }
+
+    .book-container img {
+        max-width: 100%; /* Garante que a imagem respeite o tamanho do container */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+</style>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LerVia - Estante</title>
     <link rel="stylesheet" href="styles/fontes/fonte.css">
-    
+
     <link rel="stylesheet" href="styles/estante.css">
 </head>
+
 <body>
 
-    
+
     <!-- Cabeçalho-->
     <header>
         <!--Logo-->
@@ -36,7 +59,7 @@
                     </ul>
                 </li>
                 <li><a href="Estante.html">Sua Estante</a></li>
-                <li><a id="perfil-button" onclick="GerenciarRotaLogin()" >Perfil</a></li>
+                <li><a id="perfil-button" onclick="GerenciarRotaLogin()">Perfil</a></li>
             </ul>
         </nav>
     </header>
@@ -44,23 +67,26 @@
     <section id="profile-section">
         <img src="img/usuário ícone.png" alt="Foto de perfil">
         <div>
-            <h3>Nome do Usuário</h3>
+
+        <h1 id="titulo"></h1>
+        <script>
+        const nomeUsuario = sessionStorage.getItem('nome');
+        const titulo = document.getElementById('titulo');
+        if (nomeUsuario) {
+            titulo.textContent = `@${nomeUsuario}`;
+        } else {
+        }
+    </script>
             <br>
-            <a class="perfil-button" id="perfil-button" onclick="GerenciarRotaLogin()" >Editar perfil</a>
+            <a class="perfil-button" id="perfil-button" onclick="GerenciarRotaLogin()">Editar perfil</a>
         </div>
     </section>
 
-    <section id="book-goal-section">
-        <h2>Meta de Leitura</h2>
-        <br>
-        <div class="goal-carousel">
-            <img src="img/Algoritmos.jpg" alt="Livro 1">
-            <img src="img/Big Data.jpg" alt="Livro 2">
-            <img src="img/Código Limpo.webp" alt="Livro 3">
-        </div>
-    </section>
 
     <section class="book-list">
+        <div class="category" onclick="openTab('tab-queroLer')">
+            <h3>Quero Ler</h3>
+        </div>
         <div class="category" onclick="openTab('tab-lendo')">
             <h3>Lendo</h3>
         </div>
@@ -72,58 +98,55 @@
         </div>
     </section>
 
-     <!-- Conteúdo das abas -->
-     <div id="tab-lendo" class="tab-content">
+    <!-- Conteúdo das abas -->
+    <div id="tab-queroLer" class="tab-content">
+        <h4>Livros que você quer ler:</h4>
+        <div>
+
+        </div>
+    </div>
+    <div id="tab-lendo" class="tab-content">
         <h4>Livros que você está lendo:</h4>
         <div>
-            <img src="img/Desing Digital.jpg" alt="Desing Digital">
-            <span>Desing Digital - Fabiana Guerra e Mirela Terce</span>
+
         </div>
     </div>
 
     <div id="tab-lidos" class="tab-content">
         <h4>Livros que você já leu:</h4>
         <div>
-            <img src="img/Estrutura de Dados e Algoritmos com JavaScript.jpeg" alt="Estrutura de Dados">
-            <span>Estrutura de Dados - Loaine Groner</span>
         </div>
     </div>
 
     <div id="tab-favoritos" class="tab-content">
         <h4>Seus livros favoritos:</h4>
         <div>
-            <img src="img/GuiaFront-End.webp" alt="GuiaFront-End">
-            <span>GuiaFront-End - Franz Kafka</span>
         </div>
     </div>
-
-   
-
 
     <footer>
-        <div class="rodape"> 
+        <div class="rodape">
             <div class="logo">
                 <a href="index.html"><img src="img/logo-lerevia.jpeg" alt="Logo do Projeto"></a>
+            </div>
+            <div class="links-rodape">
+                <a href="técnicas.html">Técnicas de estudo</a>
+                <a href="dicas.html">Dicas gerais</a>
+                <a href="técnicas de estudo/pomodoro.html">Pomodoro</a>
+            </div>
+            <div class="links-rodape">
+                <a href="livros/design/estanteDesign.html">Estante Design</a>
+                <a href="livros/dev/estanteDev.html">Estante Dev</a>
+                <a href="Estante.html">Sua estante</a>
+            </div>
         </div>
-        <div class="links-rodape">
-            <a href="técnicas.html">Técnicas de estudo</a>
-            <a href="dicas.html">Dicas gerais</a>
-            <a href="técnicas de estudo/pomodoro.html">Pomodoro</a>
-        </div>
-        <div class="links-rodape">
-            <a href="livros/design/estanteDesign.html">Estante Design</a>
-            <a href="livros/dev/estanteDev.html">Estante Dev</a>
-            <a href="Estante.html">Sua estante</a>
-        </div>
-    </div>
-    
+
     </footer>
-    <script src="/js/user_control.js" defer></script>
     <script>
         function openTab(tabId) {
             // Esconder todas as abas
             var tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(function(tab) {
+            tabs.forEach(function (tab) {
                 tab.classList.remove('active');
             });
 
@@ -132,5 +155,9 @@
             selectedTab.classList.add('active');
         }
     </script>
+
+    <script src="/js/estante.js" defer></script>
+    <script src="/js/user_control.js" defer></script>
 </body>
+
 </html>
