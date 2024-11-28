@@ -6,6 +6,7 @@
     <title>Lervia - Técnica Pomodoro</title>
     <link rel="stylesheet" href="../styles/fontes/fonte.css">
     <link rel="stylesheet" href="../styles/paginas_tecnicas.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     
 </head>
 <body>
@@ -85,16 +86,69 @@
     </section>
 
     <!-- Motivation and Management -->
-    <section class="motivation-section">
-        <div class="motivation-box">
-            <h3>Motivação</h3>
-            <p>A técnica Pomodoro promove uma sensação de realização após cada ciclo de trabalho completado, aumentando a motivação intrínseca para alcançar metas de estudo e desenvolvimento.</p>
+    
+    <div class="motivacao-saude-container">
+        <div class="title">Motivação e Saúde</div>
+        <div class="grid">
+          <div class="item">
+            <div class="icon-container">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Objetivos claros</h3>
+            <p>Estabeleça objetivos de curto e longo prazo para manter a direção. Isso ajuda a organizar as ideias e a criar um plano eficaz que leve ao sucesso de maneira consistente.</p>
+            <div class="read-more" onclick="toggleReadMore(this)">Ler mais</div>
+          </div>
+          <div class="item">
+            <div class="icon-container">
+              <i class="fas fa-sync-alt"></i>
+            </div>
+            <h3>Variação</h3>
+            <p>Alterne entre diferentes métodos de estudo (leitura, vídeos, exercícios) para manter o interesse. A diversidade estimula o cérebro e evita a monotonia no aprendizado.</p>
+            <div class="read-more" onclick="toggleReadMore(this)">Ler mais</div>
+          </div>
+          <div class="item">
+            <div class="icon-container">
+              <i class="fas fa-bed"></i>
+            </div>
+            <h3>Descanso</h3>
+            <p>Garanta que você esteja dormindo o suficiente para manter a mente fresca e pronta para aprender. O sono é essencial para a consolidação da memória e para a saúde mental.</p>
+            <div class="read-more" onclick="toggleReadMore(this)">Ler mais</div>
+          </div>
+          <div class="item">
+            <div class="icon-container">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+            <h3>Atividade física</h3>
+            <p>Pratique exercícios regularmente para melhorar a concentração e a disposição. O movimento físico também libera endorfina, melhorando o humor e a produtividade.</p>
+            <div class="read-more" onclick="toggleReadMore(this)">Ler mais</div>
+          </div>
+          <div class="item">
+            <div class="icon-container">
+              <i class="fas fa-apple-alt"></i>
+            </div>
+            <h3>Alimentação e hidratação</h3>
+            <p>Mantenha uma dieta balanceada e a hidratação para garantir energia e reduzir a fadiga mental. Pequenas mudanças na dieta podem melhorar significativamente o desempenho.</p>
+            <div class="read-more" onclick="toggleReadMore(this)">Ler mais</div>
+          </div>
+          <div class="item">
+            <div class="icon-container">
+              <i class="fas fa-spa"></i>
+            </div>
+            <h3>Relaxamento</h3>
+            <p>Pratique meditação, respiração profunda ou outras técnicas de relaxamento para reduzir o estresse. Essas práticas ajudam a manter o foco e a saúde mental em dia.</p>
+            <div class="read-more" onclick="toggleReadMore(this)">Ler mais</div>
+          </div>
         </div>
-        <div class="motivation-box">
-            <h3>Gerenciamento</h3>
-            <p>Estabelecendo períodos definidos de trabalho e pausa, a técnica ajuda a gerenciar e minimizar interrupções e distrações, mantendo um fluxo de trabalho eficiente e produtivo.</p>
-        </div>
-    </section>
+      </div>
+    
+      <script>
+        function toggleReadMore(button) {
+          const item = button.parentElement;
+          item.classList.toggle('expanded');
+          button.textContent = item.classList.contains('expanded') ? 'Ler menos' : 'Ler mais';
+        }
+      </script>
+     
 
     <!-- Footer -->
     <footer>
