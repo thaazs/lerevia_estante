@@ -6,10 +6,8 @@
     <title>Ler Via - Livros de Design e Desenvolvimento</title>
 
     <!-- Importação das fontes -->
+    <link rel="stylesheet" href="../../styles/fontes/fonte.css">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
 
    
 </head>
@@ -40,8 +38,8 @@
                             <li><a href="../design/estanteDesign.html">Design</a></li>
                         </ul>
                     </li>
-                    <li><a href="../Estante.html">Sua Estante</a></li>
-                    <li><a href="..//login.html">Perfil</a></li>
+                    <li><a href="../../Estante.html">Sua Estante</a></li>
+                    <li><a id="perfil-button" onclick="GerenciarRotaLogin('../../')">Perfil</a></li>
                 </ul>
             </nav>
     </header>
@@ -231,8 +229,25 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Lervia. Todos os direitos reservados.</p>
+        <div class="rodape"> 
+            <div class="logo">
+                <a href="../../index.html"><img src="../../img/logo-lerevia.jpeg" alt="Logo do Projeto"></a>
+        </div>
+        <div class="links-rodape">
+            <a href="../../técnicas.html">Técnicas de estudo</a>
+            <a href="../../dicas.html">Dicas gerais</a>
+            <a href="../../técnicas de estudo/pomodoro.html">Pomodoro</a>
+        </div>
+        <div class="links-rodape">
+            <a href="../../livros/design/estanteDesign.html">Estante Design</a>
+            <a href="../../livros/dev/estanteDev.html">Estante Dev</a>
+            <a href="../../Estante.html">Sua estante</a>
+        </div>
+    </div>
+    
     </footer>
+
+    <script src="../../js/navigation.js"></script>
 
 </body>
 </html>

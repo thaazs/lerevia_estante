@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1ede7;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #f1ede7;
+}
+
+header h1 {
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+
+ /* Logo */
+ .logo {
+    width: 150px;
+    height: auto;
+}
+
+
+.menu {
+list-style: none;
+display: flex;
+gap: 20px;
+position: relative;
+}
+
+.menu > li {
+position: relative;
+}
+
+.menu > li > a {
+text-decoration: none;
+color: #293d5d;
+font-weight: bold;
+padding: 10px;
+display: inline-block;
+}
+
+/* Submenu */
+.submenu {
+list-style: none;
+position: absolute;
+top: 100%;
+left: 0;
+background-color: #f1ede7;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+padding: 10px 0;
+display: none; /* Esconde o submenu por padrão */
+z-index: 10;
+}
+
+.submenu li {
+padding: 5px 20px;
+}
+
+.submenu li a {
+text-decoration: none;
+color: #293d5d;
+display: block;
+font-size: 14px;
+}
+
+.submenu li a:hover {
+color: #0056b3;
+}
+
+/* Exibe o submenu ao passar o mouse */
+.menu > li:hover > .submenu {
+display: block;
+}
+
+#profile-section {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+}
+
+#profile-section img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+#profile-section div {
+    margin-left: 20px;
+}
+
+#profile-section h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+#profile-section p {
+    font-size: 14px;
+    color: #666;
+}
+
+#edit-profile {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #E0E0E0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#book-goal-section {
+    padding: 0 40px;
+}
+.category h3 {
+    cursor: pointer;
+    display: inline-block;
+    background-color: #033b77;
+    color: #f1ede7;
+    padding: 10px 20px;
+    border-radius: 20px 20px 0 0; /* Cantos superiores arredondados */
+    margin: 0 10px 5px 10px;
+}
+
+.category {
+    display: inline-block;
+}
+
+/* Estilo para as abas */
+.book-list {
+    margin-top: 20px;
+}
+
+/* Estilo para as abas de conteúdo */
+.tab-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Estilo para o botão de editar perfil */
+.perfil-button {
+    background-color: #033b77;
+    color: #f1ede7;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* Estilo para o hover do botão de editar perfil */
+.perfil-button:hover {
+    opacity: 70%;
+}
+
+.goal-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.goal-carousel img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+}
+
+.book-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.book-list .category {
+    text-align: center;
+    flex-basis: 30%;
+}
+
+.category img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.category h3 {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.category h4 {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+  /* Estilos das abas */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #f1ede7;
+    border: 1px solid #DDD;
+    margin-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.tab-content h4 {
+    font-size: 18px;
+}
+
+ /* Rodapé */
+ .links-rodape {
+display: flex;
+flex-direction: column;
+}
+footer{
+margin-top: 10em;
+}
+.links-rodape a {
+text-decoration: none;
+color: #00528d;
+padding: 0.5em;
+}
+.rodape {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin: 2em;
+}
+.copy {
+text-align: center;
+margin-top: 3em;
+}.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    color: #888;
+}

@@ -1,0 +1,169 @@
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1ede7;
+    color: #293d5d
+;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: ##f1ede7;
+}
+
+header img {
+    height: 50px;
+}
+
+/* Logo */
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+
+.menu {
+list-style: none;
+display: flex;
+gap: 20px;
+position: relative;
+}
+
+.menu > li {
+position: relative;
+}
+
+.menu > li > a {
+text-decoration: none;
+color: #293d5d;
+font-weight: bold;
+padding: 10px;
+display: inline-block;
+}
+
+/* Submenu */
+.submenu {
+list-style: none;
+position: absolute;
+top: 100%;
+left: 0;
+background-color: #f1ede7;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+padding: 10px 0;
+display: none; /* Esconde o submenu por padrão */
+z-index: 10;
+}
+
+.submenu li {
+padding: 5px 20px;
+}
+
+.submenu li a {
+text-decoration: none;
+color: #293d5d;
+display: block;
+font-size: 14px;
+}
+
+.submenu li a:hover {
+color: #0056b3;
+}
+
+/* Exibe o submenu ao passar o mouse */
+.menu > li:hover > .submenu {
+display: block;
+}
+ 
+.banner-estante {
+    display: flex;
+    margin: 5em;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+        } 
+
+.banner-estante img {
+    border-radius: 5px;
+}
+
+.info-estantes {
+    width: 50%;
+}
+
+
+
+.info-estantes a {
+    display: inline-block;
+    text-decoration: none; /* Remove as decorações */
+    background-color: #00528d;
+    color: #ffffff; /* Texto branco */
+    padding: 10px 15px;
+    border-radius: 50px; /* Cantos arredondados */
+    margin-top: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    }
+
+        .info-estantes a:hover {
+            background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+        }
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 32px;
+    }
+
+    .section-destaque h2 {
+        font-size: 28px;
+    }
+
+    .book-card {
+        padding: 15px;
+    }
+
+     /*Rodapé*/
+     .links-rodape {
+display: flex;
+flex-direction: column;
+}
+footer{
+margin-top: 10em;
+}
+.links-rodape a {
+text-decoration: none;
+color: #00528d;
+padding: 0.5em;
+}
+.rodape {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin: 2em;
+}
+.copy {
+text-align: center;
+margin-top: 3em;
+}footer {
+    background-color: #f1ede7;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+}

@@ -4,329 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lerivia - Dicas Gerais</title>
+    <link rel="stylesheet" href="styles/fontes/fonte.css">
 
-    
     <!-- Importação das fontes -->
-    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/dicas.css">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f1ede7;
-            color: #293d5d
-;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: ##f1ede7;
-
-        }
-
-         /* Logo */
-        .logo {
-            width: 150px;
-            height: auto; 
-        }
-
-        .menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    position: relative;
-}
-
-.menu > li {
-    position: relative;
-}
-
-.menu > li > a {
-    text-decoration: none;
-    color: #293d5d;
-    font-weight: bold;
-    padding: 10px;
-    display: inline-block;
-}
-
-/* Submenu */
-.submenu {
-    list-style: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #f1ede7;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    display: none; /* Esconde o submenu por padrão */
-    z-index: 10;
-}
-
-.submenu li {
-    padding: 5px 20px;
-}
-
-.submenu li a {
-    text-decoration: none;
-    color: #293d5d;
-    display: block;
-    font-size: 14px;
-}
-
-.submenu li a:hover {
-    color: #0056b3;
-}
-
-/* Exibe o submenu ao passar o mouse */
-.menu > li:hover > .submenu {
-    display: block;
-}
-
-        .hero {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            background-color: #f1ede7;
-            text-align: left;
-            height: 80vh;
-        }
-        .hero div {
-            margin-left: 10em;
-            width: 40%;
-        }
-
-        .hero img {
-            width: 500px;
-            height: auto;
-        }
-
-        .hero h2 {
-            font-size: 3em;
-            margin-top: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-
-
-        .content-section {
-            background-color: #1b3869;
-            color: #f1ede7;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .content-section h3 {
-            margin-bottom: 20px;
-            font-size: 2em;
-        }
-
-        .card-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background-color: #f1ede7;
-            color: #1b3869;
-            padding: 20px;
-            margin: 10px;
-            border-radius: 5px;
-            width: 22%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .card img {
-            width: 80px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            font-size: 1em;
-        }
-        .card h4{
-            font-size: 1.5em;
-        }
-
-        .tips-section {
-            display: flex;
-            flex-direction:column;
-            gap: 40px;
-            padding: 40px 20px;
-        }
-
-        .tips-item {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .tips-item:nth-child(odd) {
-            flex-direction: row-reverse;
-        }
-
-        .tips-item img {
-            width: 45%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .tips-item .text-content {
-            width: 50%;
-
-        }
-
-        .tips-item h3 {
-            font-size: 2em;margin-bottom: 15px;
-        }
-
-        .tips-item p {
-            font-size: 1.1em;
-            line-height: 1.8;
-        }
-        .methods-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            justify-items: center;
-            align-items: center;
-        }
-
-        .method-card {
-            position: relative;
-            width: 100%;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .image-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .image-container:hover img {
-            transform: scale(1.1);
-        }
-
-        .method-description {
-            text-align: left;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 1rem;
-            background-color: #5f4676;
-            color: #fff;
-            opacity: 0;
-            transform: translateY(100%);
-            transition: transform 0.5s ease, opacity 0.5s ease;
-        }
-
-        .method-card:hover .method-description {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .method-name {
-            font-size: 20px;
-            margin-bottom: 0.5rem;
-        }
-
-
-
-        .methods-section {
-            background-color: #f1ede7;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .methods-section h3 {
-            font-size: 2em;
-            margin-bottom: 30px;
-            line-height: 1.5em;
-            text-align: left;
-            width: 30%;
-        }
-
-        .methods {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .method {
-            background-color: #fff;
-            padding: 20px;
-            margin: 10px;
-            width: 20%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .method img {
-            width: 100px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .method p {
-            font-size: 1.1em;
-        }
-
-        /*Rodapé*/
-        .links-rodape {
-    display: flex;
-    flex-direction: column;
-}
-footer{
-    margin-top: 10em;
-}
-.links-rodape a {
-    text-decoration: none;
-    color: #00528d;
-padding: 0.5em;
-}
-.rodape {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 2em;
-}
-.copy {
-    text-align: center;
-    margin-top: 3em;
-}
-    </style>
 </head>
 <body>
 
@@ -371,24 +53,24 @@ padding: 0.5em;
         <h3>Ambiente de estudo</h3>
         <div class="card-container">
             <div class="card">
-                <h4>Lorem Ipsum</h4>
-                <img src="img/livros empilhados.png" alt="Ícone">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h4>Iluminação adequada</h4>
+                <img src="https://www.svgrepo.com/show/454731/light-office-room.svg" alt="Ícone">
+                <p>Certifique-se de estudar em um local bem iluminado, preferencialmente com luz natural. Isso ajuda a manter o foco e reduz a fadiga ocular.</p>
             </div>
             <div class="card">
-                <h4>Lorem Ipsum</h4>
-                <img src="img/livros empilhados.png" alt="Ícone">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h4>Organização</h4>
+                <img src="https://www.svgrepo.com/show/492789/books-and-people.svg" alt="Ícone">
+                <p>Mantenha sua área de estudo limpa e arrumada, com apenas os materiais necessários. Isso minimiza distrações e melhora a produtividade.</p>
             </div>
             <div class="card">
-                <h4>Lorem Ipsum</h4>
-                <img src="img/livros empilhados.png" alt="Ícone">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h4>Conforto</h4>
+                <img src="https://www.svgrepo.com/show/493557/remote-workairplane-female.svg" alt="Ícone">
+                <p>Escolha uma cadeira confortável e uma mesa na altura adequada para evitar dores nas costas e no pescoço, garantindo maior concentração.</p>
             </div>
             <div class="card">
-                <h4>Lorem Ipsum</h4>
-                <img src="img/livros empilhados.png" alt="Ícone">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h4>Silêncio ou música suave</h4>
+                <img src="https://www.svgrepo.com/show/477036/headphones.svg" alt="Ícone">
+                <p>Se possível, opte por um ambiente silencioso ou, se preferir, música instrumental ou sons suaves que não atrapalhem a concentração.</p>
             </div>
             
             
@@ -477,10 +159,7 @@ padding: 0.5em;
         <div class="links-rodape">
             <a href="livros/design/estanteDesign.html">Estante Design</a>
             <a href="livros/dev/estanteDev.html">Estante Dev</a>
-        </div>
-        <div class="links-rodape">
             <a href="Estante.html">Sua estante</a>
-            <a id="perfil-button" onclick="GerenciarRotaLogin()" >Perfil</a>
         </div>
     </div>
     

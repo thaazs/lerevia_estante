@@ -5,245 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arquitetura limpa</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f1ede7;
-    }
-
-    p, h1, h2, h3 {
-      line-height: 1.5em;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background-color: #f1ede7;
-    }
-
-    .logo {
-      width: 150px;
-      height: auto;
-    }
-
-    .menu {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      position: relative;
-    }
-
-    .menu > li {
-      position: relative;
-    }
-
-    .menu > li > a {
-      text-decoration: none;
-      color: #293d5d;
-      font-weight: bold;
-      padding: 10px;
-      display: inline-block;
-    }
-
-    .submenu {
-      list-style: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #f1ede7;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 10px 0;
-      display: none;
-      z-index: 10;
-    }
-
-    .submenu li {
-      padding: 5px 20px;
-    }
-
-    .submenu li a {
-      text-decoration: none;
-      color: #293d5d;
-      display: block;
-      font-size: 14px;
-    }
-
-    .submenu li a:hover {
-      color: #0056b3;
-    }
-
-    .menu > li:hover > .submenu {
-      display: block;
-    }
-
-    .book-display {
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      padding: 40px;
-      position: relative;
-    }
-
-    /* Botão Favoritar agora fica sobre a imagem do livro */
-    .book-cover {
-      position: relative;
-    }
-
-    .book-cover img {
-      width: 300px;
-      border-radius: 5px;
-    }
-
-
-    .favorite-btn {
-      position: absolute;
-      top: -6px;
-      right: -8px;
-      background-color: #f1ede7;
-      border: 1px solid #0056b3;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      font-size: 20px;
-      color: #1d3f72;
-    }
-
-    .favorite-btn:hover {
-      background-color: #1d3f72;
-      color: white;
-    }
-
-    .book-details {
-      max-width: 500px;
-      padding-left: 20px;
-    }
-
-    .book-details h1 {
-      font-size: 48px;
-      color: #293d5d;
-    }
-
-    .book-details h3 {
-      font-size: 24px;
-      color: #293d5d;
-    }
-
-    .genre {
-      font-size: 16px;
-      color: #81a6e6;
-    }
-
-    .description {
-      margin-top: 20px;
-      line-height: 1.6;
-      font-size: 18px;
-      color: #16345a;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #1d3f72;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #16345a;
-    }
-
-    .recommended-books {
-      padding: 20px;
-    }
-
-    .recommended-books h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .book-carousel {
-      display: flex;
-      gap: 10px;
-    }
-
-    .book-carousel img {
-      width: 120px;
-      height: auto;
-      border-radius: 5px;
-    }
-
-    /* Estilo do modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .modal-content {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-      text-align: center;
-      position: relative;
-    }
-
-    .modal button {
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: #1d3f72;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-    }
-
-    .modal button:hover {
-      background-color: #16345a;
-    }
-
-    /* Botão de fechar o modal (na própria tela que abre) */
-    .close-btn {
-      background-color: #f44336;
-      border: none;
-      color: white;
-      font-size: 20px;
-      cursor: pointer;
-      padding: 5px;
-      border-radius: 50%;
-      position: absolute;
-      top: -15px;
-      right: -15px;
-    }
-
-    .close-btn:hover {
-      background-color: #d32f2f;
-    }
-
-  </style>
+  <link rel="stylesheet" href="../../../styles/fontes/fonte.css">
+    <link rel="stylesheet" href="../../../styles/pagina_livro.css">
 </head>
 <body>
 
@@ -272,7 +35,7 @@
               </ul>
           </li>
           <li><a href="../../../Estante.html">Sua Estante</a></li>
-          <li><a id="perfil-button" onclick="GerenciarRotaLogin()">Perfil</a></li>
+          <li><a id="perfil-button" onclick="GerenciarRotaLogin('../../../')">Perfil</a></li>
       </ul>
   </nav>
 </header>
@@ -300,38 +63,38 @@
         <!-- Botão de fechar o modal -->
         <button class="close-btn" id="closeModalBtn">&times;</button>
         <h2>Escolha seu status</h2>
-        <button id="lido">Lido</button>
-        <button id="lendo">Lendo</button>
-        <button id="quero_ler">Quero Ler</button>
-        <button id="favorito">Favorito</button>
+        <button id="lido" onclick="AtualizarStatus(27, 1)">Lido</button>
+        <button id="lendo" onclick="AtualizarStatus(27, 2)">Lendo</button>
+        <button id="quero_ler" onclick="AtualizarStatus(27, 3)">Quero Ler</button>
+        <button id="favorito" onclick="AtualizarStatus(27, 4)">Favorito</button>
       </div>
     </div>
 
     
   </main>
 
-  <script>
-    // Abrir e fechar o modal ao clicar em "Adicionar à estante"
-    const addShelfBtn = document.getElementById('addShelfBtn');
-    const modal = document.getElementById('modal');
-    const closeModalBtn = document.getElementById('closeModalBtn');
+  <footer>
+    <div class="rodape"> 
+        <div class="logo">
+            <a href="../../../index.html"><img src="../../../img/logo-lerevia.jpeg" alt="Logo do Projeto"></a>
+    </div>
+    <div class="links-rodape">
+        <a href="../../../técnicas.html">Técnicas de estudo</a>
+        <a href="../../../dicas.html">Dicas gerais</a>
+        <a href="../../../técnicas de estudo/pomodoro.html">Pomodoro</a>
+    </div>
+    <div class="links-rodape">
+        <a href="../../../livros/design/estanteDesign.html">Estante Design</a>
+        <a href="../../../livros/dev/estanteDev.html">Estante Dev</a>
+        <a href="../../../Estante.html">Sua estante</a>
+    </div>
+</div>
 
-    addShelfBtn.addEventListener('click', () => {
-      modal.style.display = 'flex';
-    });
+</footer>
 
-    // Fechar o modal ao clicar no botão de fechar
-    closeModalBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
+    <script src="../../../js/add_books_buttons.js"></script>
 
-    // Fechar o modal ao clicar em qualquer botão
-    const modalButtons = modal.querySelectorAll('button');
-    modalButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        modal.style.display = 'none';
-      });
-    });
-  </script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/estado_livro.js"></script>
 </body>
 </html>

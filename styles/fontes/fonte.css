@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "Raleway"; 
+    src: url("Raleway-VariableFont_wght.ttf") format("truetype"); 
+    font-weight:500; 
+    font-style: normal; 
+}
+
+* {
+    font-family: "Raleway", sans-serif; 
+}
+
+.logo img {
+    width: 150px; /* Ajuste este valor conforme necessário */
+    }
+    .links-rodape {
+    display: flex;
+    flex-direction: column;
+    }
+    footer{
+    margin-top: 10em;
+    }
+    .links-rodape a {
+    text-decoration: none;
+    color: #00528d;
+    padding: 0.5em;
+    }
+    .rodape {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2em;
+    }
+    .copy {
+    text-align: center;
+    margin-top: 3em;
+    }
+
+#perfil-button {
+    cursor: pointer;
+}
