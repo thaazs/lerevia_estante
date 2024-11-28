@@ -14,28 +14,33 @@ if ($conn->connect_error) {
     die(json_encode(['success' => false, 'message' => 'Erro ao conectar ao banco de dados']));
 }
 
-$id = isset($_POST['id']) ? $_POST['id'] : null;
-$senha = isset($_POST['senha']) ? $_POST['senha'] : null;
+// Obtendo dados do POST
+$id_usuario = isset($_POST['id']) ? $_POST['id'] : null;
+$id_livro = isset($_POST['senha']) ? $_POST['senha'] : null;
 
-
-if (!$id || !$senha) {
-    echo json_encode(['success' => false, 'message' => 'Senha são obrigatórios']);
+if (!$id_usuario || !$id_livro) {
+    echo json_encode(['success' => false, 'message' => 'ID e senha são obrigatórios']);
     exit;
 }
 
+// Preparando a query
 $stmt = $conn->prepare("UPDATE usuarios SET senha = ? WHERE id = ?");
-$stmt->bind_param("si", $senha, $id);
-$stmt->execute();
-$result = $stmt->get_result();
+$stmt->bind_param("si", $id_livro, $id_usuario);
 
-if ($result->num_rows > 0) {
-    $user = $result->fetch_assoc();
+// Executando a query
+if ($stmt->execute()) {
+    if ($stmt->affected_rows > 0) {
         echo json_encode(['success' => true, 'message' => 'Senha alterada com sucesso!']);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Nenhuma alteração feita. Verifique se o ID existe.']);
+    }
 } else {
-    echo json_encode(['success' => false, 'message' => 'Senha não alterada']);
+    echo json_encode(['success' => false, 'message' => 'Erro ao executar a atualização']);
 }
 
 $stmt->close();
 $conn->close();
 ?>
+
+
 

@@ -17,16 +17,16 @@ if ($conn->connect_error) {
 
 $nome = isset($_POST['nome']) ? $_POST['nome'] : null;
 $email = isset($_POST['email']) ? $_POST['email'] : null;
-$senha = isset($_POST['senha']) ? $_POST['senha'] : null;
+$id_livro = isset($_POST['senha']) ? $_POST['senha'] : null;
 
 
-if (!$email || !$senha || !$nome) {
+if (!$email || !$id_livro || !$nome) {
     echo json_encode(['success' => false, 'message' => 'Todos os campos são obrigatórios']);
     exit;
 }
 
 $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, senha)  VALUES(?, ?, ?)");
-$stmt->bind_param("sss", $nome, $email, $senha);
+$stmt->bind_param("sss", $nome, $email, $id_livro);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -40,3 +40,4 @@ if ($result->num_rows > 0) {
 $stmt->close();
 $conn->close();
 ?>
+

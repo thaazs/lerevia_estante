@@ -171,27 +171,31 @@
         }
 
         .links-rodape {
-    display: flex;
-    flex-direction: column;
-}
-footer{
-    margin-top: 10em;
-}
-.links-rodape a {
-    text-decoration: none;
-    color: #00528d;
-padding: 0.5em;
-}
-.rodape {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 2em;
-}
-.copy {
-    text-align: center;
-    margin-top: 3em;
-}
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            margin-top: 10em;
+        }
+
+        .links-rodape a {
+            text-decoration: none;
+            color: #00528d;
+            padding: 0.5em;
+        }
+
+        .rodape {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 2em;
+        }
+
+        .copy {
+            text-align: center;
+            margin-top: 3em;
+        }
 
         /* Estilo do fundo de ondas */
         #background-wave {
@@ -236,7 +240,7 @@ padding: 0.5em;
                     </ul>
                 </li>
                 <li><a href="Estante.html">Sua Estante</a></li>
-                <li><a id="perfil-button" onclick="GerenciarRotaLogin()" >Perfil</a></li>
+                <li><a id="perfil-button" onclick="GerenciarRotaLogin()">Perfil</a></li>
             </ul>
         </nav>
     </header>
@@ -275,8 +279,8 @@ padding: 0.5em;
             </p>
 
             <div id="form-buttons">
-                <button type="submit" onclick="AtualizarSenha()">Salvar alterações</button>
-                <button type="button" class="cancel">Cancelar</button>
+                <button type="submit" id="salvar-alteracao-perfil">Salvar alterações2</button>
+                <a href="index.html"> <button type="button" class="cancel">Cancelar</button> </a>
             </div>
         </form>
     </section>
@@ -286,29 +290,29 @@ padding: 0.5em;
     <div class="footer">
         <p>&copy; 2024 Lerivia. Todos os direitos reservados.</p>
         <footer>
-            <div class="rodape"> 
+            <div class="rodape">
                 <div class="logo">
                     <a href="index.html"><img src="img/logo-lerevia.jpeg" alt="Logo do Projeto"></a>
+                </div>
+                <div class="links-rodape">
+                    <a href="técnicas.html">Técnicas de estudo</a>
+                    <a href="dicas.html">Dicas gerais</a>
+                    <a href="técnicas de estudo/pomodoro.html">Pomodoro</a>
+                </div>
+                <div class="links-rodape">
+                    <a href="livros/design/estanteDesign.html">Estante Design</a>
+                    <a href="livros/dev/estanteDev.html">Estante Dev</a>
+                </div>
+                <div class="links-rodape">
+                    <a href="Estante.html">Sua estante</a>
+                    <a id="perfil-button" onclick="GerenciarRotaLogin()">Perfil</a>
+                </div>
             </div>
-            <div class="links-rodape">
-                <a href="técnicas.html">Técnicas de estudo</a>
-                <a href="dicas.html">Dicas gerais</a>
-                <a href="técnicas de estudo/pomodoro.html">Pomodoro</a>
-            </div>
-            <div class="links-rodape">
-                <a href="livros/design/estanteDesign.html">Estante Design</a>
-                <a href="livros/dev/estanteDev.html">Estante Dev</a>
-            </div>
-            <div class="links-rodape">
-                <a href="Estante.html">Sua estante</a>
-                <a id="perfil-button" onclick="GerenciarRotaLogin()" >Perfil</a>
-            </div>
-        </div>
-        
+
         </footer>
     </div>
 
-    <script src="/js/user_control.js" defer></script>
+    <script src="/js/perfil_control.js" defer></script>
 </body>
 
 </html>

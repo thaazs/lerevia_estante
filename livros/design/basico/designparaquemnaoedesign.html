@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,10 @@
       background-color: #f1ede7;
     }
 
-    p, h1, h2, h3 {
+    p,
+    h1,
+    h2,
+    h3 {
       line-height: 1.5em;
     }
 
@@ -41,11 +45,11 @@
       position: relative;
     }
 
-    .menu > li {
+    .menu>li {
       position: relative;
     }
 
-    .menu > li > a {
+    .menu>li>a {
       text-decoration: none;
       color: #293d5d;
       font-weight: bold;
@@ -80,7 +84,7 @@
       color: #0056b3;
     }
 
-    .menu > li:hover > .submenu {
+    .menu>li:hover>.submenu {
       display: block;
     }
 
@@ -242,40 +246,41 @@
     .close-btn:hover {
       background-color: #d32f2f;
     }
-
   </style>
 </head>
+
 <body>
 
-   <!-- Cabeçalho-->
-   <header>
+  <!-- Cabeçalho-->
+  <header>
     <!--Logo-->
     <a href="../../../index.html"><img src="../../../img/logo-lerevia.jpeg" alt="Logo Lerivia" class="logo"></a>
 
     <!-- Navegação-->
     <nav>
       <ul class="menu">
-          <li>
-              <a href="../../../técnicas.html">Técnicas de Estudo ﹀</a>
-              <ul class="submenu">
-                  <li><a href="../../../dicas.html">Dicas Gerais</a></li>
-                  <li><a href="../../../técnicas de estudo/pomodoro.html">Pomodoro</a></li>
-                  <li><a href="../../../técnicas de estudo/tecnica2.html">Técnica 2</a></li>
-                  <li><a href="../../../técnicas de estudo/tecnica3.html">Técnica 3</a></li>
-              </ul>
-          </li>
-          <li>
-              <a href="../../../livros.html">Livros ﹀</a>
-              <ul class="submenu">
-                  <li><a href="../../dev/estanteDev.html">Dev</a></li>
-                  <li><a href="../estanteDesign.html">Design</a></li>
-              </ul>
-          </li>
-          <li><a href="../../../Estante.html">Sua Estante</a></li>
-          <li><a id="perfil-button" onclick="GerenciarRotaLogin()">Perfil</a></li>
+        <li>
+          <a href="../../../técnicas.html">Técnicas de Estudo ﹀</a>
+          <ul class="submenu">
+            <li><a href="../../../dicas.html">Dicas Gerais</a></li>
+            <li><a href="../../../técnicas de estudo/pomodoro.html">Pomodoro</a></li>
+            <li><a href="../../../técnicas de estudo/tecnica2.html">Técnica 2</a></li>
+            <li><a href="../../../técnicas de estudo/tecnica3.html">Técnica 3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="../../../livros.html">Livros ﹀</a>
+          <ul class="submenu">
+            <li><a href="../../dev/estanteDev.html">Dev</a></li>
+            <li><a href="../estanteDesign.html">Design</a></li>
+          </ul>
+        </li>
+        <li><a href="../../../Estante.html">Sua Estante</a></li>
+        <!-- Propagar nojeira > parametro -->
+        <li><a id="perfil-button" onclick="GerenciarRotaLogin('../../../')">Perfil</a></li>
       </ul>
-  </nav>
-</header>
+    </nav>
+  </header>
 
   <main>
     <section class="book-display">
@@ -289,15 +294,17 @@
         <h3>Robin Williams</h3>
         <p class="genre">Design Básico</p>
         <p class="description">
-            Robin Williams, de forma clara e didática, mostra que qualquer pessoa pode criar páginas com uma estética mais 
-            agradável. Voltado para leigos, este livro oferece dicas práticas e truques úteis para diversas situações, desde 
-            a criação de um simples panfleto até a elaboração de um jornal. A autora simplifica os conceitos de design, tornando-os 
-            acessíveis para quem deseja melhorar a qualidade visual de seus projetos cotidianos.
+          Robin Williams, de forma clara e didática, mostra que qualquer pessoa pode criar páginas com uma estética mais
+          agradável. Voltado para leigos, este livro oferece dicas práticas e truques úteis para diversas situações,
+          desde
+          a criação de um simples panfleto até a elaboração de um jornal. A autora simplifica os conceitos de design,
+          tornando-os
+          acessíveis para quem deseja melhorar a qualidade visual de seus projetos cotidianos.
         </p>
         <button id="addShelfBtn" data-book-id="12">Adicionar à estante</button>
-    </div>
-    
-    
+      </div>
+
+
     </section>
 
     <!-- Modal -->
@@ -306,14 +313,14 @@
         <!-- Botão de fechar o modal -->
         <button class="close-btn" id="closeModalBtn">&times;</button>
         <h2>Escolha seu status</h2>
-        <button id="lido">Lido</button>
-        <button id="lendo">Lendo</button>
-        <button id="quero_ler">Quero Ler</button>
-        <button id="favorito">Favorito</button>
+        <button id="lido" onclick="AtualizarStatus(12, 1)">Lido</button>
+        <button id="lendo" onclick="AtualizarStatus(12, 2)">Lendo</button>
+        <button id="quero_ler" onclick="AtualizarStatus(12, 3)">Quero Ler</button>
+        <button id="favorito" onclick="AtualizarStatus(12, 4)">Favorito</button>
       </div>
     </div>
 
-    
+
   </main>
 
   <script>
@@ -340,6 +347,9 @@
     });
   </script>
 
-<script src="../../../js/user_control.js" defer></script>
+  <script src="../../../js/navigation.js"></script>
+  <script src="../../../js/estado_livro.js"></script>
+
 </body>
+
 </html>

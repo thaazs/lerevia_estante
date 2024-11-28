@@ -39,6 +39,10 @@ CREATE TABLE marcacao_livros (
    FOREIGN KEY (id_status) REFERENCES status(id)
 );
 
+-- criar usuario
+INSERT INTO usuarios (nome, email, senha) VALUES
+('Thaissa', 'teste1@gmail.com', '12345678');
+
 insert into status (nome) VALUES
 ('Lido'),
 ('Lendo'),
@@ -48,9 +52,8 @@ insert into status (nome) VALUES
 -- Marcar livros 
 Insert into marcacao_livros(id_usuario, id_livro, id_status) VALUES
 (1,1,1),
-(1,2,2),
-(2,1,3),
-(2,2,1);
+(1,2,2);
+
 
 -- inserindo todos os livros no banco (na ordem design avancado, design basico e devs)
 
@@ -97,9 +100,6 @@ VALUES
 
 
 
--- criar usuario
-INSERT INTO usuarios (nome, email, senha) VALUES
-('Thaissa', 'teste1@gmail.com', '12345678');
 
 INSERT INTO livros (titulo, autor, genero) VALUES
 ('1984', 'George Orwell', 'Distopia'),

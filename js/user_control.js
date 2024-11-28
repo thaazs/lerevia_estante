@@ -25,6 +25,40 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         window.location.href = "/index.html";
     });
+
+
+    createAccountButton.addEventListener("click", async (event) => {
+        event.preventDefault()
+
+        const nome = document.getElementById("nome-criar-conta").value;
+        const email = document.getElementById("email-criar-conta").value;
+        const password = document.getElementById("senha-criar-conta").value;
+
+        if (!email || !password || !nome) {
+            alert("Por favor, preencha todos os campos!");
+            return;
+        }
+
+        if (password.length <= 7) {
+            alert("Senha deve ser valida");
+            return;
+        }
+
+        if (!email.match(/^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,6}$/)) {
+            alert("O e-mail deve ser válido");
+            return;
+        }
+
+        var result = createUser(nome, email, password);
+        if (!result) {
+            return
+        }
+
+        alert("Conta criada com sucesso");
+        window.location.href = "login.html";
+    });
+
+
 });
 
 async function login(email, password) {
@@ -53,36 +87,6 @@ async function login(email, password) {
     }
 }
 
-createAccountButton.addEventListener("click", async (event) => {
-    event.preventDefault()
-
-    const nome = document.getElementById("nome-criar-conta").value;
-    const email = document.getElementById("email-criar-conta").value;
-    const password = document.getElementById("senha-criar-conta").value;
-
-    if (!email || !password || !nome) {
-        alert("Por favor, preencha todos os campos!");
-        return;
-    }
-
-    if (password.length <= 7) {
-        alert("Senha deve ser valida");
-        return;
-    }
-
-    if (!email.match(/^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,6}$/)) {
-        alert("O e-mail deve ser válido");
-        return;
-    }
-
-    var result = createUser(nome, email, password);
-    if (!result) {
-        return
-    }
-
-    alert("Conta criada com sucesso");
-    window.location.href = "login.html";
-});
 
 async function login(email, password) {
     try {
@@ -146,38 +150,5 @@ function GerenciarRotaLogin() {
         window.location.href = "perfil.html";
     } else {
         window.location.href = "login.html";
-    }
-}
-
-async function AtualizarSenha(event) {
-    event.preventDefault();
-
-    let id = sessionStorage.getItem('id');
-    let password = document.getElementById("editar-perfil-senha").value;
-
-    try {
-        const response = await fetch('http://localhost/lerevia/database/alterar_senha.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
-                id: id,
-                senha: password,
-            }),
-        });
-
-        const data = await response.json();
-        if (data.success) {
-            alert("foi");
-            return true;
-        } else {
-            alert(data.message);
-            alert("N foi");
-            return false;
-        }
-    } catch (error) {
-        alert(data.message);
-        return false;
     }
 }

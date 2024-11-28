@@ -15,10 +15,10 @@ if ($conn->connect_error) {
 }
 
 $email = isset($_POST['email']) ? $_POST['email'] : null;
-$senha = isset($_POST['senha']) ? $_POST['senha'] : null;
+$id_livro = isset($_POST['senha']) ? $_POST['senha'] : null;
 
 
-if (!$email || !$senha) {
+if (!$email || !$id_livro) {
     echo json_encode(['success' => false, 'message' => 'Email e senha são obrigatórios']);
     exit;
 }
@@ -30,7 +30,7 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
-    if ($senha == $user['senha']) {
+    if ($id_livro == $user['senha']) {
         echo json_encode(['success' => true, 'message' => 'Login realizado com sucesso!', 'id' => $user['id'], 'nome' => $user['nome'], 'email' => $user['email']]);
     } else {
         echo json_encode(['success' => false, 'message' => 'Senha incorreta']);
